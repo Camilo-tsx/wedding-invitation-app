@@ -4,7 +4,6 @@ import { checkPermissions, createEvent } from "@/core/services/event/service";
 import { eventSchema } from "@/schemas/event.schema";
 import { NextRequest, NextResponse } from "next/server";
 import { safeParse } from "valibot";
-import { deleteEvent } from "@/core/services/event/service";
 import { requireAuth } from "@/core/services/auth/requireAuth";
 import { getAllEvents } from "@/core/services/event/service";
 

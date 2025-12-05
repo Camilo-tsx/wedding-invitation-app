@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "src/models",
     "src/app/api/event/myevents/getevent/route.ts"
-  ],
+, "jest.config.js"  ],
   "exclude": ["node_modules"]
 }

@@ -17,14 +17,13 @@ export const POST = async (req: NextRequest) => {
       { status: 400 }
     );
 
-  console.log("ahora si paso el body");
   const guest = {
     ...result.output,
     eventId,
   };
-  console.log("llega el guest");
+
   try {
-    console.log("entro al try");
+    console.log("entró al try");
     const newGuest = await addGuest(guest);
 
     if (!newGuest)

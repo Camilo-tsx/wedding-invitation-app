@@ -79,7 +79,7 @@ export const GET = async (
     }
 
     if (guests.length === 0) {
-      return NextResponse.json(guests, { status: 204 });
+      return NextResponse.json(guests, { status: 200 });
     }
 
     const response = NextResponse.json(guests, { status: 200 });

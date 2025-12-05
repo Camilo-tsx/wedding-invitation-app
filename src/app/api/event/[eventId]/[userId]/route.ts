@@ -17,7 +17,7 @@ export const GET = async (req: NextRequest, { params }: Params) => {
     if (!event)
       return NextResponse.json({ message: "Event not found" }, { status: 404 });
     return NextResponse.json(event, {
-      status: 201,
+      status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
@@ -38,13 +38,16 @@ export const DELETE = async (req: NextRequest, { params }: Params) => {
   const eventId = params.eventId;
   if (!eventId)
     return NextResponse.json(
-      { message: "Can not delete your guest" },
+      { message: "Can not delete your event" },
       { status: 400 }
     );
 
   try {
     await deleteEvent(eventId, userId);
-    return NextResponse.json({ message: "Delete Succefull" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Event deleted successfully" },
+      { status: 200 }
+    );
   } catch (err) {
     if (err instanceof Error) {
       return NextResponse.json({ message: err.message }, { status: 400 });
